@@ -10,6 +10,7 @@ module ChatSpace
   class Application < Rails::Application
 
 
-
   end
 end
+
+
