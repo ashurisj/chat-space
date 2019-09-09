@@ -1,12 +1,45 @@
 # README
 
+## groups_usersテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
-|chat_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :group
+- belongs_to :user
 
 
-This README would normally document whatever steps are necessary to get the
+## usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|name|text|null: false, foreign_key: true|
+|Email|text|null: false, foreign_key: true|
+|group_id|text|null: false, foreign_key: true|
+
+### Association
+- belongs_to :group
+- has_many :message
+
+
+## groupsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_name|text|null: false, foreign_key: true|
+|message|text|null: false, foreign_key: true|
+|image|text|null: false, foreign_key: true|
+
+### Association
+- has_many :users
+- has_many :message
+
+<!-- This README would normally document whatever steps are necessary to get the
 application up and running.
 
 Things you may want to cover:
@@ -27,4 +60,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* ... -->
