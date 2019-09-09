@@ -6,57 +6,35 @@
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
+|message_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
 - belongs_to :user
+- belongs_to :message
 
 
 ## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, foreign_key: true|
+|name|string|null: false, index|
 |Email|text|null: false, foreign_key: true|
 
 ### Association
-- has_many :group
-- has_many :message
+- has_many :groups
+- has_many :messages
 
 
 ## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|name|text|null: false, foreign_key: true|
+|name|string|null: false|
 
 ### Association
 - has_many :users
-- has_many :message
-
-
-## groups_messagesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|message_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :group
-- belongs_to :message
-
-
-## users_messagesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|message_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :user
-- belongs_to :message
+- has_many :messages
 
 
 ## messagesテーブル
