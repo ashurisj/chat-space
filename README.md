@@ -39,6 +39,22 @@
 - has_many :users
 - has_many :message
 
+
+## messagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_name|text|null: false, foreign_key: true|
+|message|text|null: false, foreign_key: true|
+|image|text|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :group
+
+
+
 <!-- This README would normally document whatever steps are necessary to get the
 application up and running.
 
