@@ -1,0 +1,165 @@
+// Place all the styles related to the messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.flash-box {
+  color: white;
+  font-size: 17px;
+  text-align: center;
+  width: 100w;
+}
+
+.box {
+  display: table;
+  height: 20px;
+  background-color: #38AEF0;
+}
+
+.chat-side {
+  float: left;
+  width: 300px;
+  color: #ffffff;
+
+  .side-header {
+    display: flex;
+    height: 100px;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #253141;
+    &__box {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      font-weight: bold;
+    }
+      // &__user-name {
+      //   font-size: 16px;
+      // }
+      &__menu {
+        display: flex;
+      }
+        &__new-group {
+          margin-left: 0.3rem;
+          &__icon {
+            display: inline-block;
+            font-size: inherit;
+            text-rendering: auto;
+          }
+        }
+        &__edit-user {
+          margin-left: 0.3rem;
+          &__icon {
+            display: inline-block;
+            font-size: inherit;
+            text-rendering: auto;
+          }
+        }
+  }
+  .groups {
+    height: calc(100vh - 100px);
+    padding: 20px 20px 0;
+    background-color: #2f3e51;
+    overflow: scroll;
+
+    .group {
+      margin-bottom: 40px;
+        &__group-name {
+          margin-bottom: 5px;
+          font-size: 15px;
+        }
+        &__group-message {
+          font-size: 11px;
+        }
+    }
+  }
+}
+
+.chat-main {
+  float: left;
+  width: calc(100vw - 300px);
+
+  .main-header {
+    display: flex;
+    position: relative;
+    height: 100px;
+    padding: 0 40px;
+    border-bottom: solid 1px #eeeeee;
+    overflow: scroll;
+    &__left-box {
+      margin-top: 35px;
+      display: flex;
+    }
+      &__current-group {
+        margin-bottom: 15px;
+        font-size: 20px;
+      }
+      &__member-list {
+        margin-bottom: 46px;
+        color: #999999;
+        font-size: 12px;
+      }
+        &__member {
+          margin-bottom: 46px;
+          color: #999999;
+          font-size: 12px;
+        }
+    &__edit-btn {
+      position: absolute;
+      right: 40px;
+      height: 40px;
+      line-height: 40px;
+      margin: 28px 40px 0 0;
+      padding: 0 20px;
+      border: #38AEF0;
+    }
+  }
+  .messages {
+    display: flex;
+    height: calc(100vh - 100px);
+    .message {
+      padding: 46px 40px;
+      background-color: #fafafa;
+      &__uper-info{
+        display: flex;
+        margin-bottom: 10px;
+      }
+        &__talker {
+          color: #999999;
+          font-size: 12px;
+          font-weight: bold;
+        }
+        &__date {
+          color: #434a54;
+          font-size: 16px;
+        }
+      &__text {
+        margin-bottom: 10px;
+        color: #434A54;
+        font-size: 14px;
+      }
+    }
+  }
+  .form {
+    bottom: 0;
+    height: 80px;
+    width: calc(100vh - 300px);
+    padding: 20px 40px;
+    background-color: #999999;
+    .input-box {
+      position: relative;
+      width: 100%;
+      line-height: 50px;
+      right: 10px;
+      padding: 0 40px;
+      font-size: 16px;
+      color: #434A54;
+      background-color: #ffffff;
+      &__image {
+      }
+    }
+    .input-submit-btn {
+      position: absolute;
+      background-color: #38AEF0;
+    }
+  }
+}
