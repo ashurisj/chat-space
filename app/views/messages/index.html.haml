@@ -30,17 +30,10 @@
         %p.message__text fantastic
 
     .form
-      .input-box
+      %form#input-box.input-box
         %input.input-box__text{placeholder: "type a message"}
         %label.input-box__image
           = fa_icon 'image', class: "fa"
       %input.submit-btn{value: "Send"}
 
 
-    -# .form
-    -#   %form.new_message.new_message
-    -#     .input-box
-    -#       %input#message_content.input-box__text type a message
-    -#       %label.input-box__image
-    -#       = fa_icon 'image', class: "fa"
-    -#     %input.submit-btn Send
