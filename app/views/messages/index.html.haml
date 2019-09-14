@@ -6,9 +6,15 @@
         %p.side-header__box__user-name taka
         %ul.side-header__box__menu
           %li.side-header__box__menu__new-group
-          = fa_icon 'edit', class: "fa"
+            %a.link{href: "/groups/new"}
+              %i.icon
+              = fa_icon 'edit'
+              %span<>
           %li.side-header__box__menu__edit-user
-          = fa_icon 'cog', class: "fa"
+            %a.link{href: "/users/edit"}
+              %i.icon
+              = fa_icon 'cog'
+              %span<>
     .groups
       .group
         %p.group__group-name fun
@@ -22,6 +28,7 @@
           Member：
           %li.main-header__left-box__member-list__member jin
       .main-header__edit-btn Edit
+      %a{href: "/groups/edit"}
     .messages
       .message
         .message__upper-info
@@ -33,7 +40,8 @@
       %form#input-box.input-box
         %input.input-box__text{placeholder: "type a message"}
         %label.input-box__image
-          = fa_icon 'image', class: "fa"
+          %i.icon
+          = fa_icon 'image'
       %input.submit-btn{value: "Send"}
 
 
