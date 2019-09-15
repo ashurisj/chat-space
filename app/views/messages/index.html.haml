@@ -10,7 +10,7 @@
         %ul.left-header__members
           Member：
           %li.member
-            = @group_users.user @group.name
+            = @group.name
       .right-header
         = link_to 'Edit', edit_group_path(current_user), class: 'right-header__button'
     .messages

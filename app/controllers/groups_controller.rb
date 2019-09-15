@@ -4,9 +4,6 @@ class GroupsController < ApplicationController
   def index
   end
 
-  def edit
-  end
-
   def new
     @group = Group.new
     @group.users << current_user
