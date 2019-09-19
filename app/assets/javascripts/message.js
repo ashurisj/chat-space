@@ -35,7 +35,7 @@ $(function(){
             ${message.content}
           </p>
         </div>
-        <img src='' >
+        <image = '' >
       </div>`
       return html;
       };
