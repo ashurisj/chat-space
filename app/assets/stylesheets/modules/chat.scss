@@ -5,7 +5,6 @@
     height: 100px;
     padding: 0 40px;
     .left-header {
-      position: fixed;
       float: left;
       &__title {
         color: #333;
@@ -14,7 +13,6 @@
       }
       &__members {
         display: flex;
-        @include flexbox;
         color: $light_gray;
         font-size: 12px;
         margin-top: 15px;
@@ -25,22 +23,13 @@
       }
     }
     .right-header {
-      // position: fixed;
       border: 1px solid $light_blue;
-      // color: $light_blue;
       float: right;
       height: 40px;
       line-height: 40px;
       margin-top: 28px;
       padding: 0 20px;
-      &__user-name {
-
-      }
       &__button {
-        // padding: 0 20px;
-        // position: absolute;
-        // float: right;
-        // right: 0;
         color: $light_blue;
         text-decoration: none;
       }
@@ -51,9 +40,9 @@
     background-color: #FAFAFA;
     box-sizing: border-box;
     padding: 46px 40px 0;
-    height: calc(100% - 100px - 90px);
+    height: calc(100vh - 100px - 90px);
+    overflow: scroll;
     .message {
-      overflow: scroll;
       .upper-message {
         display: flex;
         &__user-name {
@@ -79,15 +68,16 @@
   }
 
   .form {
-    bottom: 0;
+    box-sizing: border-box;
     position: fixed;
+    bottom: 0;
     width: calc(100% - 300px);
     background-color: #DDDDDD;
-    box-sizing: border-box;
     height: 90px;
-    padding: 20px 50px 20px 40px;
+    padding: 20px 40px 20px 40px;
     &__message {
       border: none;
+      padding: 0 40px 0 10px;
       float: left;
       height: 50px;
       width: calc(100% - 150px);
@@ -115,5 +105,6 @@
       margin-left: 15px;
       padding: 0 30px;
     }
+  
   }
 }
