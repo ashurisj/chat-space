@@ -1,5 +1,7 @@
 $(function(){
   function buildHTML(message) {
+      var image = 
+      message.image ? '<img src=$message.image>' : ''  
       var html =
         `<div class="message" data-message-id=${message.id}>
           <div class="upper-message">
@@ -15,10 +17,7 @@ $(function(){
               ${message.content}
             </p>
           </div>
-          <img src=${message.image} >
         </div>`
-      var image = 
-        message.image ? imgsrc=$message_image : ''
       return html + image;
   }
     $('form').on('submit', function(e){
