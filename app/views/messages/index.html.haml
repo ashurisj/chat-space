@@ -12,7 +12,7 @@
           %li.member
             = @group.users.pluck(:name).join(", ")
       .right-header
-        = link_to 'Edit', edit_group_path(current_user), class: 'right-header__button'
+        = link_to 'Edit', edit_group_path(@group), class: 'right-header__button'
     .messages
       = render @messages
     .form
