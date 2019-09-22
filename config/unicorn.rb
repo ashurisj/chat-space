@@ -1,4 +1,4 @@
-app_path = File.expand_path('../..', __FILE__)
+app_path = File.expand_path('../../', __FILE__)
 
 worker_processes 1
 
@@ -10,7 +10,7 @@ listen 3000
 
 stderr_path "#{app_path}/log/unicorn.stderr.log"
 
-stdout_psth "#{app_path}/log/unicorn.stdout.log"
+stdout_path "#{app_path}/log/unicorn.stdout.log"
 
 timeout 60
 
@@ -26,14 +26,14 @@ before_fork do |server, worker|
     ActiveRecord::Base.connection.disconnect!
 
   if run_once
-    run_once = false
+    run_once = false # prevent from firing again
   end
 
-  old_pid = "#{server.config[:pid]}.old_pid"
+  old_pid = "#{server.config[:pid]}.oldbin"
   if File.exist?(old_pid) && server.pid != old_pid
     begin
       sig = (worker.nr + 1) >= server.worker_processes ? :QUIT : :TTOU
-      Process.kill(sig, File.read(old_pid)to_i)
+      Process.kill(sig, File.read(old_pid).to_i)
     rescue Errno::ENOENT, Errno::ESRCH => e
       logger.error e
     end
