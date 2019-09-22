@@ -35,10 +35,10 @@ $(document).on('turbolinks:load', function(){
         if (input.length === 0) { 
           $('#user-search-result').empty();
         }
-        else if (users.length !== 0) {
+        else if (input.length !== 0) {
           $('#user-search-result').empty();
-          users.forEach(function(user){
-            appendUser(user)
+            users.forEach(function(user){
+              appendUser(user)
           });
         }
         else {
@@ -48,7 +48,8 @@ $(document).on('turbolinks:load', function(){
       .fail(function() {
         alert('ユーザー検索に失敗');
       });
-  })
+  });
+
   $(function(){
     $(document).on("click", '.user-search-add', function(e) {
       e.preventDefault();
