@@ -32,13 +32,10 @@ $(document).on('turbolinks:load', function(){
       dataType: 'json',
     })
       .done(function(users){
-        if (input.length === 0) { 
+        if (input.length !== 0) { 
           $('#user-search-result').empty();
-        }
-        else if (input.length !== 0) {
-          $('#user-search-result').empty();
-            users.forEach(function(user){
-              appendUser(user)
+          users.forEach(function(user){
+            appendUser(user)
           });
         }
         else {
