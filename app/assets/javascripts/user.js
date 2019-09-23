@@ -12,6 +12,12 @@ $(document).on('turbolinks:load', function(){
     search_list.append(html);
   }
 
+  function appendErrorMessageToHTML(err_msg) {
+    var html = 
+      `<div class="chat-group-user clearfix">${err_msg}</div>`;
+    search_list.append(html);
+  }
+
   function appendMembers(name, user_id) {
     var html =
       `<div class='chat-group-user'>
@@ -32,14 +38,16 @@ $(document).on('turbolinks:load', function(){
       dataType: 'json',
     })
       .done(function(users){
-        if (input.length !== 0) { 
+        if (input.length === 0) {
           $('#user-search-result').empty();
+        }
+        else if (users.length !== 0) { 
           users.forEach(function(user){
             appendUser(user)
           });
         }
         else {
-          $('#user-search-result').empty();
+          appendErrorMessageToHTML("一致するユーザーがありません");
         }
       })
       .fail(function() {
