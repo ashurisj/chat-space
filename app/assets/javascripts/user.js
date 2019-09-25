@@ -28,15 +28,15 @@ $(document).on('turbolinks:load', function(){
     member_list.append(html);
   }
   
-  $('#user-search-field').on('keyup', function(e) {
-    e.preventDefault();
-    var input = $('#user-search-field').val();
-    $.ajax({
-      type: 'GET',
-      url: '/users/search',
-      data: { keyword: input },
-      dataType: 'json',
-    })
+  $(function(e) {
+    $('#user-search-field').on('keyup', function() {
+      var input = $('#user-search-field').val();
+      $.ajax({
+        type: 'GET',
+        url: '/users/search',
+        data: { keyword: input },
+        dataType: 'json',
+      })
       .done(function(users){
         $('#user-search-result').empty();
           if (users.length !== 0) { 
@@ -51,20 +51,21 @@ $(document).on('turbolinks:load', function(){
       .fail(function() {
         alert('ユーザー検索に失敗');
       });
-  });
-
-  $(function(){
-    $(document).on("click", '.user-search-add', function(e) {
-      e.preventDefault();
-      var name = $(this).data("user-name");
-      var user_id = $(this).data("user-id");
-      $("#member-search-result").unwrap();
-      appendMembers(name, user_id);
-      $(this).parent().remove();
     });
-    $(document).on("click", '.user-search-remove', function(e){
-      e.preventDefault();
-      $(this).parent().remove();
+
+    $(function(){
+      $(document).on("click", '.user-search-add', function(e) {
+        e.preventDefault();
+        var name = $(this).data("user-name");
+        var user_id = $(this).data("user-id");
+        $("#member-search-result").unwrap();
+        appendMembers(name, user_id);
+        $(this).parent().remove();
+      });
+      $(document).on("click", '.user-search-remove', function(e){
+        e.preventDefault();
+        $(this).parent().remove();
+      });
     });
   });
 });
